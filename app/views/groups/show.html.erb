@@ -17,15 +17,16 @@
   		    <th></th>
   		    </tr>
   		    <tr>
-          <td><%=imqge_tag @group.group_image,size:'50x50' %>
+          <td><%=image_tag @group.group_image,size:'50x50' %>
           </td>
           <td><%=@group.name %></td>
           <td><%=@group.introduction %></td>
-          <td>
-
-          </td>
+          <td><% @group.users.each do |user| %>
+          <%=user.name %>
+          <% end %></td>
           <td>
             <% unless @group.is_owner_by?(current_user) %>
+            <% 
             <%=link_to "Join this group" %>
             <% end %>
           </td>
