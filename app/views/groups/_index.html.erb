@@ -17,7 +17,7 @@
         <td><%=group.introduction %></td>
         <td><%=group.group_users.count %></td>
         <% if group.is_owner_by?(current_user) %>
-        <td><%= link_to 'edit', edit_group_path(group) %></td>
+        <td><%= link_to 'edit', edit_group_path(group),class: "btn btn-success" %></td>
         <% end %>
       </tr>
     <% end %>
